@@ -8,10 +8,10 @@ import s_image_3 from "../assets/inImage/3.jpg";
 import s_image_5 from "../assets/inImage/5.jpg";
 
 
-
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import {Cards} from "./ServiveCards";
 
 
 import {CCard, CCardImage, CCardBody, CCardText} from '@coreui/react'; // Adjust the path if necessary
@@ -44,7 +44,7 @@ export const Projects = () => {
         {
             title: "Security Consulting",
             description: "Strategic security roadmap and tailored architecture design solutions.",
-            imgUrl:s_image_5 ,
+            imgUrl: s_image_5,
         },
         {
             title: "GRC Services",
@@ -56,7 +56,10 @@ export const Projects = () => {
     return (
         <section className="project" id="projects">
             <Container>
-                <Row>
+                <h2>Services</h2>
+                <p>We do awesome services for our clients</p>
+                <p>Defend what matters most, because data breaches are not an option</p>
+                {/*<Row>
                     <Col size={12}>
                         <TrackVisibility>
                             {({isVisible}) =>
@@ -65,7 +68,7 @@ export const Projects = () => {
                                     <p>We do awesome services for our clients</p>
                                     <p>Defend what matters most, because data breaches are not an option</p>
                                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                                        {/*<Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                             <Nav.Item>
                                                 <Nav.Link eventKey="first">Tab 1</Nav.Link>
                                             </Nav.Item>
@@ -75,21 +78,10 @@ export const Projects = () => {
                                             <Nav.Item>
                                                 <Nav.Link eventKey="third">Tab 3</Nav.Link>
                                             </Nav.Item>
-                                        </Nav>*/}
+                                        </Nav>
                                         <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                                             <Tab.Pane eventKey="first">
-                                                <Row>
-                                                    {
-                                                        projects.map((project, index) => {
-                                                            return (
-                                                                <ProjectCard
-                                                                    key={index}
-                                                                    {...project}
-                                                                />
-                                                            )
-                                                        })
-                                                    }
-                                                </Row>
+
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="section">
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
@@ -99,10 +91,39 @@ export const Projects = () => {
                                             </Tab.Pane>
                                         </Tab.Content>
                                     </Tab.Container>
+                                    <Row style={{gap:'20px',textAlign:'center'}}>
+                                        {
+                                            projects.map((project, index) => {
+                                                return (
+                                                    <Cards
+                                                        key={index}
+                                                        {...project}
+                                                    />
+                                                )
+                                            })
+                                        }
+                                    </Row>
                                 </div>}
                         </TrackVisibility>
                     </Col>
-                </Row>
+                </Row>*/}
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Row style={{ gap: '20px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }} className="service-card-row">
+                        {
+                            projects.map((project, index) => {
+                                return (
+                                    <Cards
+                                        key={index}
+                                        {...project}
+                                    />
+                                )
+                            })
+                        }
+                    </Row>
+                </div>
+
+
+
             </Container>
             <img className="background-image-right" src={colorSharp2}></img>
         </section>

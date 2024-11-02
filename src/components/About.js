@@ -6,6 +6,8 @@ import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
+import headerImg from "../assets/inImage/cybersecurity-pixabay-1-1693900006-removebg-preview.png";
+import aboutSubImage from "../assets/about.png";
 
 export const About = () => {
     const responsive = {
@@ -32,8 +34,8 @@ export const About = () => {
         <section className="skill" id="skills">
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
-                        <div className="skill-bx wow zoomIn">
+                    <div className="col-12" >
+                        <div className="skill-bx wow zoomIn" style={{overflow:'hidden'}}>
                             <h2>About</h2>
                             <p>ArmorCore is a cutting-edge cybersecurity firm dedicated to safeguarding businesses in an increasingly complex digital landscape.<br></br>  Founded in 2022, our mission is to provide robust, innovative, and tailored security solutions that empower organizations to thrive in the face of evolving cyber threats. At ArmorCore, we understand that every business has unique security needs. Our team of elite cybersecurity experts combines deep industry knowledge with state-of-the-art technology to deliver comprehensive protection across all digital assets. We offer a wide range of services, including.</p>
                             <div className={"aboutCountBox"}>
@@ -42,10 +44,23 @@ export const About = () => {
                                 <h5 className={"about"}>Email : <span style={{color:'#B8B8B8'}}>info@armorcore.com</span></h5><br/>
                                 <h5 className={"about"}>Phone : <span style={{color:'#B8B8B8'}} > 011 234 2343</span></h5>
                             </div>
+
+                            <img src={aboutSubImage} alt="Header Img" className={"aboutSubImage"}
+                                 style={{width:'332px',
+                                     position:'absolute',
+                                     top:'45%',
+                                     left:'9%'}}
+                            />
+                            {/*width: 332px;
+    position: absolute;
+    top: 50%;
+    left: 9%;*/}
                         </div>
 
                     </div>
+
                 </div>
+
             </div>
         </section>
     )
